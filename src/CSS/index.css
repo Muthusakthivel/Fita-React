@@ -1,0 +1,19 @@
+.heading{
+    color: red;
+    font-weight: 600;
+}
+.image{
+    width: 300px;
+}
+.space-bottom{
+    margin-bottom: 10px;
+}
+.label{
+    font-size: 20px;
+    display: inline-block;
+    width: 200px;
+}
+.input{
+    width: 250px;
+    font-size: 20px;
+}
