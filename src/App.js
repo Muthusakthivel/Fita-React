@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LoginPage from './Pages/Login';
+import Home from './Pages/Home';
 
 class App extends Component {
 
@@ -12,8 +13,9 @@ class App extends Component {
       <div>
         <h1 className='heading'>Hello React...</h1>
         <h2 className='sub-heading'>This is App.js Component</h2>
-        <button onClick={() => { this.display() }}>Click this Button</button>
+        <button onClick={() => { this.display()}}>Click this Button</button>
         <LoginPage></LoginPage>
+        <Home></Home>
       </div>
     )
   }
