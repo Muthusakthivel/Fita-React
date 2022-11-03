@@ -7,7 +7,6 @@
 }
 .space-bottom{
     margin-bottom: 10px;
-
 }
 .label{
     font-size: 18px;
@@ -22,4 +21,41 @@
     width: 21px;
     margin-left: 6px;
     cursor: pointer;
+}
+.align-flex{
+    display: flex;
+    flex-direction: row;
+}
+.border-red{
+    border: 3px solid red;
+}
+.header{
+    border: 2px solid red;
+    height: 10vh;
+}
+.body{
+    border: 2px solid;
+    height: 86vh;
+    display: flex;
+    flex-direction: row;
+}
+.sidebar{
+    border: 2px solid red;
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.content{
+    border: 2px solid red;
+}
+.button{
+    text-decoration: none;
+    border: 2px solid;
+    background-color: #673ab7;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }

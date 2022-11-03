@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import LoginPage from './Pages/Login';
-import Home from './Pages/Home';
+import LoginPage from './pages/login';
+import Home from './pages/home';
+import ContactPage from './pages/contact';
+import RegisterPage from './pages/register';
+import MailPage from './pages/mail';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -10,13 +15,15 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <h1 className='heading'>Hello React...</h1>
-        <h2 className='sub-heading'>This is App.js Component</h2>
-        <button onClick={() => { this.display()}}>Click this Button</button>
-        <LoginPage></LoginPage>
-        <Home></Home>
-      </div>
+      <Router>
+        <Routes>
+          <Route  path="/" exact element={<Home />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
+          <Route  path="/register" exact element={<RegisterPage />}></Route>
+          <Route  path="/contact" exact element={<ContactPage />}></Route>
+          <Route path="/mail" element={<MailPage />}></Route>
+        </Routes>
+      </Router>
     )
   }
 }
@@ -25,5 +32,8 @@ class App extends Component {
 // snake Case - muthu_kumar -> To Define Function and Variable Name
 // Kebab Case - muthu-kumar -> To Define CSS Class name and HTML attribute name
 
+// 2 Ways of Navigation
+// 1. using spl HTML Tag (NavLink)
+// 2. Using inbuild method(this.props.history.push () )
 export default App;
 

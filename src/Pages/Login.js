@@ -31,6 +31,7 @@ class LoginPage extends Component {
 
   onSubmit = () => {
     console.log(this.state);
+    
   };
   showPassword(status){
     this.setState({
@@ -60,7 +61,7 @@ class LoginPage extends Component {
             />
           </div>
         )}
-        <div className="space-bottom">
+        <div className="space-bottom align-flex">
           <label className="label">Enter Your Email ID :</label>
           <input
             className="input"
@@ -73,18 +74,18 @@ class LoginPage extends Component {
         <div>
           <label className="label">Enter Your Password :</label>
           <input
-            className="input"
-            type="password"
+            className={this.state.showPassword ? 'input border-red' : 'input'}
+            type={this.state.showPassword ? "text" : "password"}
             placeholder="Please enter your Password"
             onChange={this.onHandleInput}
             name="password"
           />
           { this.state.showPassword ? 
-          <img src={require("../Images/eye-open.png")} className="icon" alt="eye-open"
-          onClick={() => this.showPassword(false)} />
+          <img src={require("../Images/eye-open.png")} className="icon" alt="eye-open" 
+           onClick={() => this.showPassword(false)}  />
           :
-          <img src={require("../Images/eye-close.png")} className="icon" alt="eye-close" 
-          onClick={() => this.showPassword(true)} /> }
+          <img src={require("../Images/eye-close.png")} className="icon" alt="eye-close"  
+            onClick={() => this.showPassword(true)} /> }
   
         </div>
         <button onClick={() => this.onSubmit()}> Login </button>
