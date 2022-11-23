@@ -9,6 +9,9 @@ class Home extends Component{
             userList : []
         }
     }
+    componentDidMount(){
+       this.onLoadAPI();
+      }
 
     onLoadAPI(){
         const url = "https://reqres.in/api/users?page=2";

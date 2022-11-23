@@ -6,7 +6,7 @@ class DraftPage extends Component{
   onDeleteUser(){
     const url = "https://reqres.in/api/users/2";
 
-    axios.delete(url)
+    axios.delete(url, this.state)
       .then((response) => {
         const serverData = response.data;
         console.log(serverData);
