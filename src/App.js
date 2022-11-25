@@ -4,6 +4,7 @@ import Home from './pages/home';
 import ContactPage from './pages/contact';
 import RegisterPage from './pages/register';
 import MailPage from './pages/mail';
+import "./CSS/materialize.css";
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 

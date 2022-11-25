@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import Header from '../Components/header';
 
 class Home extends Component{
     constructor(props){
@@ -44,6 +45,7 @@ class Home extends Component{
         })
         return(
             <div>
+                <Header></Header>
             <h1>This is a Home Page</h1>
             <NavLink to="/contact">Go to Contact Page</NavLink>
             <br/>
