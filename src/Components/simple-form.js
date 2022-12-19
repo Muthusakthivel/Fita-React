@@ -20,6 +20,8 @@ let [loginForm, setLoginForm] = useState({
 });
 
 let [inlineCondition, setInlineCondition] = useState(true);
+let [ifElseCondition, setIfElseCondition] = useState(false);
+let [passwordVisibility, setPasswordVisibility] = useState(false);
 
   const onSubmitForm = () => {
    console.log(loginForm);
@@ -42,6 +44,15 @@ let [inlineCondition, setInlineCondition] = useState(true);
     setInlineCondition(condition);
   }
 
+  const handleIfElseRendering = () => {
+    let condition = !ifElseCondition;
+    // alert(condition);
+     setIfElseCondition(condition);
+  }
+  const handlePasswordVisibility = (condition) => {
+    setPasswordVisibility(condition);
+  }
+
   return(
     <div>
         <h1>{message}</h1>
@@ -54,9 +65,13 @@ let [inlineCondition, setInlineCondition] = useState(true);
         </div>
         <div className='space'>
             <label className='label'>Enter Your Password</label>
-            <input type="password" placeholder='Please enter your Password' onChange={onHandleInput} id="password"/>
-            <img src={require("../images/open-eye.png")} alt="open-eye" className='password-icon' />
-            <img src={require("../images/close-eye.png")} alt="close-eye" className='password-icon' />
+            <input type={passwordVisibility ? "text" : "password"} placeholder='Please enter your Password' onChange={onHandleInput} id="password"/>
+            {passwordVisibility ? 
+            <img src={require("../images/open-eye.png")} alt="open-eye" className='password-icon' onClick={()=>handlePasswordVisibility(false)}/> 
+            :
+             <img src={require("../images/close-eye.png")} alt="close-eye" className='password-icon' onClick={()=>handlePasswordVisibility(true)}/> }
+            
+            
         </div>
         <div className='space'>
             <button onClick={() => onSubmitForm()}>Submit Form</button>
@@ -70,6 +85,15 @@ let [inlineCondition, setInlineCondition] = useState(true);
             <h1>This is a Inline IF Condition</h1>
             <h1>I will be show & hide based on condition</h1>
             </div>}
+            <div>
+              <h1>Inline If-Else Condition</h1>
+              <button onClick={() => handleIfElseRendering()}> Switch {ifElseCondition ? "ON" : "OFF"} </button>
+              {ifElseCondition ?
+                <img src='https://img.freepik.com/free-vector/realistic-light-bulb-with-electricity_23-2149129410.jpg?w=2000' alt='color-bulb' style={{width : "100px"}}/> 
+                :
+              <img src='https://thumbs.dreamstime.com/b/light-bulb-11371329.jpg' alt='bulb' style={{width : "100px"}}/>
+            }
+            </div>
         </div>
     </div>
   )
