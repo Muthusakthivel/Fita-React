@@ -11,6 +11,8 @@ const HomePage = () => {
             <br />
             <NavLink to="/mail">Go to Mail Page</NavLink>
             <br />
+            <NavLink to="/register">Sign Up</NavLink>
+            <br />
         </div>
     )
 }
