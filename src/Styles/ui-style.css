@@ -46,3 +46,10 @@
 .register-selection{
     font-size: 22px;
 }
+.error{
+    color: red;
+    font-size: 13px;
+}
+.input-error{
+    border: 2px solid red;
+}
