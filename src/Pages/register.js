@@ -22,9 +22,7 @@ const RegisterPage = () => {
         address:false,
         qualification: false
     });
-    let [accountList, setAccountList] = useState([
-
-    ]);
+    let [accountList, setAccountList] = useState([]);
     const submitRegister = () => {
         console.log(register);
         setFormError({
@@ -37,12 +35,10 @@ const RegisterPage = () => {
             address: register.address === "" ? true : false,
             qualification: register.qualification === "" ? true : false
         });
-        // for(let field in formError){
-        //     if(formError[field] === true){
-        //         return;
-        //     }
-        // }
-       // alert('');
+        accountList.push(register);
+       setAccountList(accountList);
+
+    //    setAccountList([...accountList, register]);
     }
     const handleInput = (event) => {
         setRegister({...register, [event.target.name]: event.target.value});
@@ -89,13 +85,13 @@ const RegisterPage = () => {
             </div>
             <div className='space'>
                 <label className='register-label'>Enter Your Address</label>
-                <textarea name='address' placeholder='Enter your address'  className={formError.userName ? "register-input input-error" : "register-input"} onChange={handleInput}></textarea>
+                <textarea name='address' placeholder='Enter your address'  className={formError.address ? "register-input input-error" : "register-input"} onChange={handleInput}></textarea>
 
-                {formError.address && <p className='error'>Please enter a valid address</p>}
+                {formError.address && <p className='error'>Please enter a valid address</p>} 
             </div>
             <div className='space'>
                 <label className='register-label'>Select your Highest Qualification :</label>
-                <select  className={formError.userName ? "register-input input-error" : "register-input"} defaultValue={""} onChange={handleInput} name='qualification'>
+                <select  className={formError.qualification ? "register-input input-error" : "register-input"} defaultValue={""} onChange={handleInput} name='qualification'>
                     <option disabled value="">Please select your qualification</option>
                     <option>Under Graduate</option>
                     <option>Post Graduate</option>
@@ -107,6 +103,38 @@ const RegisterPage = () => {
             </div>
             <div className='space'>
                 <button onClick={()=> submitRegister()}>Create Your Account</button>
+            </div>
+            <div style={{"height": "600px"}}>
+                <table id='customers'>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email ID</th>
+                            <th>Date Of Birth</th>
+                            <th>Gender</th>
+                            <th>Hobbies</th>
+                            <th>Address</th>
+                            <th>Qualification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        accountList.map((value, index) => {
+                            return(
+                                <tr key={index}>
+                                    <td>{value.userName}</td>
+                                    <td>{value.emailId}</td>
+                                    <td>{value.dateOfBirth}</td>
+                                    <td>{value.gender}</td>
+                                    <td>{value.hobbies}</td>
+                                    <td>{value.address}</td>
+                                    <td>{value.qualification}</td>
+                                </tr>
+                            )
+                        })
+                    }
+                    </tbody>
+                </table>
             </div>
         </div>
     )
