@@ -12,6 +12,7 @@ import Inbox from './Pages/inbox';
 import Sent from './Pages/sent';
 import Trash from './Pages/trash';
 import RegisterPage from './Pages/register';
+import UserPage from './Pages/users';
 
 function App(){
   return(
@@ -26,6 +27,7 @@ function App(){
           <Route path='trash' element={<Trash></Trash>}></Route>
         </Route>
         <Route path='register' element={<RegisterPage></RegisterPage>}></Route>
+        <Route path='users' element={<UserPage></UserPage>}></Route>
       </Routes>
     </BrowserRouter>
   )

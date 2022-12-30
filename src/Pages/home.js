@@ -19,6 +19,7 @@ const HomePage = () => {
             <NavLink to="/register">Sign Up</NavLink>
             <br></br>
             <button onClick={() => moveToTrash()}>Move to Trash</button>
+            <NavLink to="/users">To View List Of All Users</NavLink>
         </div>
     )
 }
