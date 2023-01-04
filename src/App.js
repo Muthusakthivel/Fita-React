@@ -13,6 +13,7 @@ import Sent from './Pages/sent';
 import Trash from './Pages/trash';
 import RegisterPage from './Pages/register';
 import UserPage from './Pages/users';
+import AccountCreatePage from './Pages/account-create';
 
 function App(){
   return(
@@ -25,6 +26,7 @@ function App(){
           <Route path='inbox' element={<Inbox></Inbox>}></Route>
           <Route path='sent' element={<Sent></Sent>}></Route>
           <Route path='trash' element={<Trash></Trash>}></Route>
+          <Route path='account' element={<AccountCreatePage></AccountCreatePage>}></Route>
         </Route>
         <Route path='register' element={<RegisterPage></RegisterPage>}></Route>
         <Route path='users' element={<UserPage></UserPage>}></Route>
