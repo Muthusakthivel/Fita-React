@@ -11,9 +11,9 @@ const UserPage = () => {
 
     // }, [])
 
-    // useEffect(() => {
-    //     loadProfiles(1);
-    //  }, [])
+    useEffect(() => {
+        loadProfiles(1);
+     }, [])
 
  const loadProfiles = (pageNumber) =>{
     const api_url = "https://reqres.in/api/users?page=" + pageNumber;
